@@ -5,9 +5,9 @@ pipelineJob('frontend') {
                 git {
                     remote {
                         credentials("")
-                        url("https://github.com/Panda-Academy-Core-2-0/Frontend.git")
+                        url("https://github.com/gusiak97/Frontend.git")
                     }
-                    branches('final')
+                    branches('main')
                     scriptPath('Jenkinsfile')
                 }
             }
