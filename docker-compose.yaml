@@ -26,9 +26,13 @@ services:
     ports:
       - "50000:50000"
       - "8880:8080"
+    environment:
+      - CASC_JENKINS_CONFIG=/usr/share/jenkins/ref/jenkins.yaml
     volumes:
       - ./jenkins_controller/jenkins.yaml:/usr/share/jenkins/ref/jenkins.yaml
-      - ./jenkins_controller/jobs:/usr/share/jenkins/ref/jobs
+      - ./jenkins_controller/jobs/backend.groovy:/usr/share/jenkins/ref/jobs/backend.groovy
+      - ./jenkins_controller/jobs/frontend.groovy:/usr/share/jenkins/ref/jobs/frontend.groovy
+      - ./jenkins_controller/jobs/app_of_apps.groovy:/usr/share/jenkins/ref/jobs/app_of_apps.groovy
     restart: always
 
   jenkins_agent:
